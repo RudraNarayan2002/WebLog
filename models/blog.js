@@ -6,6 +6,10 @@ const BlogSchema = new Schema ({
     title: String,
     description: String,
     image: String,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     comments: [
         {
             type: Schema.Types.ObjectId,

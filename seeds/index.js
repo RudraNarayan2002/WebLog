@@ -22,6 +22,7 @@ const seedDB = async () => {
     for( let i = 0; i < 20; i++) {
         const random30 = Math.floor(Math.random() * 30);
         const blog = new Blog({
+           author: '6231d403110cdb62602795ad',
            title: `${sample(title)}`,
            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
         //    image: 'https://source.unsplash.com/collection/483251'

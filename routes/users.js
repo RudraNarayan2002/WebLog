@@ -5,11 +5,11 @@ const catchAsync = require('../Utils/catchAsync');
 const User = require('../models/user');
 
 
-router.get('/register', (req, res) => {
-    res.render('users/register');
+router.get('/signup', (req, res) => {
+    res.render('users/signup');
 })
 
-router.post('/register', catchAsync(async(req, res, next) => {
+router.post('/signup', catchAsync(async(req, res, next) => {
     try{
     const {email, username, password} = req.body;
     const user = new User({ email, username});
@@ -21,7 +21,7 @@ router.post('/register', catchAsync(async(req, res, next) => {
       })
     } catch(e) {
         req.flash('error', e.message);
-        res.redirect('/register');
+        res.redirect('/signup');
     }
 }));
 
